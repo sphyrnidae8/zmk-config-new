@@ -4,12 +4,29 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
+    behaviors {
+        BSPC_TAP_SYM_HOLD: BSPC_TAP_SYM_HOLD {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BSPC_TAP_SYM_HOLD";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <100>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,14 +38,14 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+&kp TAB    &kp Q           &kp W           &kp E        &kp R             &kp T          &kp Y         &kp U                           &kp I               &kp O           &kp P     &kp BSPC
+&kp LCTRL  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G          &kp H         &mt LEFT_SHIFT J                &mt LEFT_CONTROL K  &mt LEFT_ALT L  &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z           &kp X           &kp C        &kp V             &kp B          &kp N         &kp M                           &kp COMMA           &kp DOT         &kp FSLH  &kp ESC
+                                           &lt 4 TAB    &lt 6 SPACE       &lt 5 ENTER    &lt 1 ESCAPE  &BSPC_TAP_SYM_HOLD 2 BACKSPACE  &lt 7 DELETE
             >;
         };
 
-        lower_layer {
+        sym {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -36,14 +53,14 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&kp TAB     &kp N1        &kp DLLR      &kp AT        &kp AMPERSAND  &kp CARET       &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp ASTERISK    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&kp LSHFT   &kp PERCENT   &kp HASH      &kp PIPE      &trans         &trans          &trans    &trans    &trans    &trans     &trans  &trans
+                                        &kp GRAVE     &trans         &kp SPACE       &kp RET   &trans    &kp RALT
             >;
         };
 
-        raise_layer {
+        num {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -51,10 +68,55 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &mkp LCLK  &trans    &mkp RCLK    &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans     &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI   &studio_unlock    &kp SPACE    &kp RET    &studio_unlock     &kp RALT
+&kp TAB    &kp EQUAL   &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp LESS_THAN       &kp CARET  &kp AMPS        &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
+&kp MINUS  &kp COMMA   &kp NUMBER_1  &kp NUMBER_5  &kp NUMBER_6  &kp LESS_THAN       &kp MINUS  &kp EQUAL       &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &kp PERIOD  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp GREATER_THAN    &kp UNDER  &kp PLUS        &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                                     &kp PERCENT   &kp NUMBER_0  &kp PLUS            &kp RET    &studio_unlock  &kp RALT
+            >;
+        };
+
+        button {
+            bindings = <
+&trans  &trans            &trans        &trans            &trans          &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans            &trans        &trans            &trans          &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                        &trans            &trans          &trans    &trans  &trans  &trans
+            >;
+        };
+
+        media {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &rgb_ug RGB_TOG    &rgb_ug RGB_COLOR_HSB(114,90,49)  &rgb_ug RGB_BRI    &rgb_ug RGB_BRD  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD
+&trans  &trans  &trans  &trans  &trans  &trans    &ext_power EP_TOG  &kp K_NEXT                        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans           &rgb_ug RGB_SAI
+&trans  &trans  &trans  &trans  &trans  &trans    &out OUT_TOG       &trans                            &trans             &trans           &trans           &rgb_ug RGB_SAD
+                        &trans  &trans  &trans    &trans             &trans                            &trans
+            >;
+        };
+
+        mouse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        nav {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
+                        &trans  &trans  &trans    &kp ENTER       &trans          &trans
+            >;
+        };
+
+        fun {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
