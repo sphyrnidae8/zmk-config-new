@@ -79,10 +79,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp DE_EURO  &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp ASTERISK    &kp CARET        &kp AMPS         &kp KP_MULTIPLY  &kp LPAR        &kp RPAR     &kp BSPC
-&kp MINUS  &kp COMMA    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS        &kp DE_A_UMLAUT  &kp DE_O_UMLAUT  &kp DE_U_UMLAUT  &kp DE_SHARP_S  &kp DE_EURO  &kp GRAVE
-&kp LSHFT  &kp PERIOD   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS       &kp UNDER        &kp PLUS         &kp LBRC         &kp RBRC        &kp PIPE     &kp TILDE
-                                      &kp PERCENT   &kp NUMBER_0  &kp EQUAL       &kp RET          &studio_unlock   &kp RALT
+&kp TAB    &kp AMPERSAND  &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp ASTERISK    &kp CARET        &kp AMPS         &kp KP_MULTIPLY  &kp LPAR        &kp RPAR     &kp BSPC
+&kp MINUS  &kp COMMA      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS        &kp DE_A_UMLAUT  &kp DE_O_UMLAUT  &kp DE_U_UMLAUT  &kp DE_SHARP_S  &kp DE_EURO  &kp GRAVE
+&kp LSHFT  &kp PERIOD     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS       &kp UNDER        &kp PLUS         &kp LBRC         &kp RBRC        &kp PIPE     &kp TILDE
+                                        &kp PERCENT   &kp NUMBER_0  &kp EQUAL       &kp RET          &studio_unlock   &kp RALT
             >;
         };
 
