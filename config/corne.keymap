@@ -64,8 +64,8 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp DOUBLE_QUOTES  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET             &kp LEFT_PARENTHESIS     &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&kp TILDE  &kp BACKSLASH      &kp SLASH         &kp LEFT_BRACE     &kp RIGHT_BRACE       &kp RIGHT_PARENTHESIS    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&kp TAB    &kp DOUBLE_QUOTES  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET             &kp AT                   &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+&kp TILDE  &kp BACKSLASH      &kp SLASH         &kp LEFT_BRACE     &kp RIGHT_BRACE       &kp EQUAL                &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
 &kp LSHFT  &kp HASH           &kp DOLLAR        &kp PIPE           &kp EXCLAMATION       &kp QUESTION             &trans    &trans    &trans    &trans     &trans  &trans
                                                 &bigsmall          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp RET   &trans    &kp RALT
             >;
