@@ -23,7 +23,7 @@ layers:
   - {t: J, h: LEFT SHIFT}
   - {t: K, h: LEFT CONTROL}
   - {t: L, h: LEFT ALT}
-  - ;
+  - {t: ;, h: RIGHT COMMAND}
   - ''''
   - Shift
   - Z
@@ -45,23 +45,23 @@ layers:
   - {t: DELETE, h: fun}
   sym:
   - ↹
-  - '1'
-  - $
-  - '@'
-  - AMPERSAND
+  - (RA(ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD E)))
+  - '['
+  - ']'
   - ^
+  - '*'
   - '6'
   - '7'
   - '8'
   - '9'
   - '0'
   - ⌫
-  - BT CLR
-  - BT 1
-  - BT 2
-  - BT 3
-  - BT 4
-  - '*'
+  - '~'
+  - \
+  - /
+  - '{'
+  - '}'
+  - '='
   - ←
   - ↓
   - ↑
@@ -69,30 +69,30 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Shift
-  - '%'
   - '#'
+  - $
   - '|'
+  - '!'
+  - _
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '`'
-  - {t: ▽, type: trans}
-  - ␣
+  - '"'
+  - '?'
+  - '-'
   - {t: ⏎, type: held}
   - {t: ▽, type: trans}
   - Alt
   num:
   - ↹
-  - '='
+  - (RA(ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD E)))
   - '7'
   - '8'
   - '9'
-  - <
+  - '*'
   - ^
   - AMPS
   - KP MULTIPLY
@@ -101,14 +101,14 @@ layers:
   - ⌫
   - '-'
   - ','
-  - '1'
+  - '4'
   - '5'
   - '6'
-  - <
-  - '-'
-  - '='
-  - '['
-  - ']'
+  - +
+  - (ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD APOSTROPHE AND QUOTE))
+  - (ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD SEMICOLON AND COLON))
+  - (ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD LEFT BRACKET AND LEFT BRACE))
+  - (ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD MINUS AND UNDERSCORE))
   - \
   - '`'
   - Shift
@@ -116,7 +116,7 @@ layers:
   - '1'
   - '2'
   - '3'
-  - '>'
+  - '-'
   - _
   - +
   - '{'
@@ -125,7 +125,7 @@ layers:
   - '~'
   - '%'
   - '0'
-  - +
+  - '='
   - ⏎
   - {t: '&studio_unlock', type: held}
   - Alt

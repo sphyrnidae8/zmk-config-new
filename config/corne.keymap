@@ -5,14 +5,12 @@
  */
 
 #include <dt-bindings/zmk/mouse.h>
+#include "keys_de.h"
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
-#include "keys_de.h"
-
 
 / {
     behaviors {
@@ -40,9 +38,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q           &kp W           &kp E        &kp R             &kp T          &kp Y         &kp U                           &kp I               &kp O           &kp P     &kp BSPC
-&kp LCTRL  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G          &kp H         &mt LEFT_SHIFT J                &mt LEFT_CONTROL K  &mt LEFT_ALT L  &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z           &kp X           &kp C        &kp V             &kp B          &kp N         &kp M                           &kp COMMA           &kp DOT         &kp FSLH  &kp ESC
+&kp TAB    &kp Q           &kp W           &kp E        &kp R             &kp T          &kp Y         &kp U                           &kp I               &kp O           &kp P                   &kp BSPC
+&kp LCTRL  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G          &kp H         &mt LEFT_SHIFT J                &mt LEFT_CONTROL K  &mt LEFT_ALT L  &mt RIGHT_COMMAND SEMI  &kp SQT
+&kp LSHFT  &kp Z           &kp X           &kp C        &kp V             &kp B          &kp N         &kp M                           &kp COMMA           &kp DOT         &kp FSLH                &kp ESC
                                            &lt 4 TAB    &lt 6 SPACE       &lt 5 ENTER    &lt 1 ESCAPE  &BSPC_TAP_SYM_HOLD 2 BACKSPACE  &lt 7 DELETE
             >;
         };
@@ -55,10 +53,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp DLLR      &kp AT        &kp AMPERSAND  &kp CARET       &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp ASTERISK    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &kp PERCENT   &kp HASH      &kp PIPE      &trans         &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp GRAVE     &trans         &kp SPACE       &kp RET   &trans    &kp RALT
+&kp TAB    &kp DE_EURO    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp CARET        &kp ASTRK    &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
+&kp TILDE  &kp BACKSLASH  &kp SLASH         &kp LEFT_BRACE     &kp RIGHT_BRACE  &kp EQUAL    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&kp LSHFT  &kp HASH       &kp DOLLAR        &kp PIPE           &kp EXCLAMATION  &kp UNDER    &trans    &trans    &trans    &trans     &trans  &trans
+                                            &kp DOUBLE_QUOTES  &kp QUESTION     &kp MINUS    &kp RET   &trans    &kp RALT
             >;
         };
 
@@ -70,10 +68,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EQUAL   &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp LESS_THAN       &kp CARET  &kp AMPS        &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp MINUS  &kp COMMA   &kp NUMBER_1  &kp NUMBER_5  &kp NUMBER_6  &kp LESS_THAN       &kp MINUS  &kp EQUAL       &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &kp PERIOD  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp GREATER_THAN    &kp UNDER  &kp PLUS        &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                     &kp PERCENT   &kp NUMBER_0  &kp PLUS            &kp RET    &studio_unlock  &kp RALT
+&kp TAB    &kp DE_EURO  &kp NUMBER_7  &kp NUMBER_8  &kp N9        &kp ASTERISK    &kp CARET        &kp AMPS         &kp KP_MULTIPLY  &kp LPAR        &kp RPAR  &kp BSPC
+&kp MINUS  &kp COMMA    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS        &kp DE_A_UMLAUT  &kp DE_O_UMLAUT  &kp DE_U_UMLAUT  &kp DE_SHARP_S  &kp BSLH  &kp GRAVE
+&kp LSHFT  &kp PERIOD   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS       &kp UNDER        &kp PLUS         &kp LBRC         &kp RBRC        &kp PIPE  &kp TILDE
+                                      &kp PERCENT   &kp NUMBER_0  &kp EQUAL       &kp RET          &studio_unlock   &kp RALT
             >;
         };
 
